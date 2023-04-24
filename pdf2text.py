@@ -58,7 +58,7 @@ def pdf2text(pdfPath, zoom_x=6, zoom_y=6, rotation_angle=0):
 def savetext(start, end, count):
     global logger
     all_data = ''
-    huake_data = ''
+    your_university_data = ''
     for control_number in range(start, end):
         control_number = '%05d' % control_number
         control_number = year*100000 + int(control_number)
@@ -76,17 +76,16 @@ def savetext(start, end, count):
                     print(control_number, ' -- gbk encoding error')
 
                 all_data += num_row
-                if university == 'Huazhong University of Science and Technology':
-                    huake_data += num_row
+                if university == your_university:
+                    your_university_data += num_row
 
     with open('./all/all' + str(count) + '.txt', 'w', encoding='utf-8') as al:
         # all_data = all_data.encode('utf-8')
         al.write(all_data)
         print('./all/all' + str(count) + '.txt save sucessfully')
-    with open('./huake/huake' + str(count) + '.txt', 'w', encoding='utf-8') as huake:
-        # huake_data = huake_data.decode('utf-8')
-        huake.write(huake_data)
-        print('./huake/huake' + str(count) + '.txt save sucessfully')
+    with open('./your_university/your_university' + str(count) + '.txt', 'w', encoding='utf-8') as your_university_file:
+        your_university_file.write(your_university_data)
+        print('./your_university/your_university' + str(count) + '.txt save sucessfully')
 
 
 
@@ -115,8 +114,8 @@ if __name__ == '__main__':
 
     # 合并文件
     all_dir = "./all/"
-    huake_dir = './huake/'
+    your_university_dir = './your_university/'
     txtjoint(all_dir)
-    txtjoint(huake_dir)
+    txtjoint(your_university_dir)
 
 
