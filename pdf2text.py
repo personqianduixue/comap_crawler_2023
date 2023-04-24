@@ -9,10 +9,11 @@ import os
 from multiprocessing import Process
 import re
 from config import *
+
 pytesseract.pytesseract.tesseract_cmd = TesseractOCR_path
 
 
-def pdf2text(pdfPath, zoom_x=6, zoom_y=6, rotation_angle=0):
+def pdf2text(pdfPath, control_number, zoom_x=6, zoom_y=6, rotation_angle=0):
     students = ['']
     university = ''
     prize = ''
@@ -49,8 +50,9 @@ def pdf2text(pdfPath, zoom_x=6, zoom_y=6, rotation_angle=0):
             # pix.save(imgPath + str(pg) + ".png")
         pdf.close()
     except:
-
-        print(pdfPath, 'File Exception')
+        print(control_number, 'Exception')
+        with open('exception.txt', 'w+') as exception_file:
+            exception_file.write(control_number)
 
     return students, university, prize
 
@@ -61,10 +63,10 @@ def savetext(start, end, count):
     your_university_data = ''
     for control_number in range(start, end):
         control_number = '%05d' % control_number
-        control_number = year*100000 + int(control_number)
+        control_number = year * 100000 + int(control_number)
         path = "./paper/" + str(control_number) + ".pdf"
         if os.path.exists(path):
-            students, university, prize = pdf2text(path)
+            students, university, prize = pdf2text(path, control_number)
             students = ','.join(students)
             row = '%s,%s,%s\n' % (students, university, prize)
             if prize:
@@ -79,14 +81,13 @@ def savetext(start, end, count):
                 if university == your_university:
                     your_university_data += num_row
 
-    with open('./all/all' + str(count) + '.txt', 'w', encoding='utf-8') as al:
+    with open('./all/all' + str(count) + '.txt', 'w', encoding='utf-8') as all_file:
         # all_data = all_data.encode('utf-8')
-        al.write(all_data)
+        all_file.write(all_data)
         print('./all/all' + str(count) + '.txt save sucessfully')
     with open('./your_university/your_university' + str(count) + '.txt', 'w', encoding='utf-8') as your_university_file:
         your_university_file.write(your_university_data)
         print('./your_university/your_university' + str(count) + '.txt save sucessfully')
-
 
 
 def txtjoint(dir):
@@ -103,6 +104,12 @@ def txtjoint(dir):
 
 
 if __name__ == '__main__':
+
+    if not os.path.exists('./all/'):
+        os.mkdir('./all/')
+    if not os.path.exists('./your_university/'):
+        os.mkdir('./your_university/')
+
     step = pdf2text_step
     count = 1
     for i in range(1, total_num, step):
@@ -117,5 +124,3 @@ if __name__ == '__main__':
     your_university_dir = './your_university/'
     txtjoint(all_dir)
     txtjoint(your_university_dir)
-
-
