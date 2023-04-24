@@ -5,6 +5,8 @@
 
 以下是2022美赛爬取，2023美赛出成绩后会第一时间爬取
 
+https://github.com/personqianduixue/comap_crawler
+
 download.py：多进程下载证书，大概用时1小时
 
 pdf2text.py:  多进程pdf OCR信息提取，大概用时1.5小时
