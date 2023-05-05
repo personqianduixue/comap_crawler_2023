@@ -1,5 +1,4 @@
 paper/*.pdf
-.ipynb_checkpoints/*
-.idea/
-all/tmp*.txt
-your_university/*.txt
+.ipynb_checkpoints/
+.idea
+tmp*.txt
