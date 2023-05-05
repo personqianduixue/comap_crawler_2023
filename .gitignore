@@ -1,5 +1,6 @@
 paper/*.pdf
 .ipynb_checkpoints
+gitpush.bat
 .idea
 tmp*.txt
 your_university
