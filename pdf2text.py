@@ -109,18 +109,18 @@ def savetext(start, end, count):
 
 
 if __name__ == '__main__':
-    # if not os.path.exists('./all/'):
-    #     os.mkdir('./all/')
-    # if not os.path.exists('./your_university/'):
-    #     os.mkdir('./your_university/')
-    #
-    # step = pdf2text_step
-    # count = 1
-    # for i in range(1, total_num, step):
-    #     start = i
-    #     end = i + step - 1
-    #     p = Process(target=savetext, args=(start, end, count))
-    #     p.start()
-    #     count += 1
+    if not os.path.exists('./all/'):
+        os.mkdir('./all/')
+    if not os.path.exists('./your_university/'):
+        os.mkdir('./your_university/')
 
-    students, university, prize = pdf2text('./paper/2227551.pdf', 2227551)
+    step = pdf2text_step
+    count = 1
+    for i in range(1, total_num, step):
+        start = i
+        end = i + step - 1
+        p = Process(target=savetext, args=(start, end, count))
+        p.start()
+        count += 1
+
+    # students, university, prize = pdf2text('./paper/2227551.pdf', 2227551)
