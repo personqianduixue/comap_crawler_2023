@@ -8,7 +8,8 @@
 2. download.py下载证书，由于有些证书只运行一次部分下载会失败，需要运行多次，确保全部下载
 
 3. pdf2text.py识别学校、姓名、获奖等级、队伍ID等
-4. analysis.ipynb分析数据
+4. txt_joint.py合并OCR识别的txt结果
+5. analysis.ipynb分析数据
 
 以下是2022美赛爬取，2023美赛出成绩后会第一时间爬取
 

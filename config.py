@@ -1,9 +1,11 @@
-year = 23
+year = 22
 total_num = 30000
-#开30进程
-download_step = 1000
-#开30进程
-pdf2text_step = 1000
+# 30000/进程数
+#开60进程
+download_step = 500
+#开60进程
+
+pdf2text_step = 500
 #你的学校
 your_university= 'Xiamen University'
 #TesseractOCR路径
