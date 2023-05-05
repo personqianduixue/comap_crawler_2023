@@ -67,8 +67,14 @@ def savetext(start, end, count):
         path = "./paper/" + str(control_number) + ".pdf"
         if os.path.exists(path):
             students, university, prize = pdf2text(path, control_number)
-            students = ','.join(students)
-            row = '%s,%s,%s\n' % (students, university, prize)
+            if len(students) == 1:
+                students = ','.join(students) + ', , '
+            elif len(students) == 2:
+                students = ','.join(students) + ', '
+            else:
+                students = ','.join(students)
+
+            row = '%s,%s,%s,\n' % (students, university, prize)
             if prize:
                 num_row = '%s,%s' % (control_number, row)
                 num_row = num_row.encode('gbk', 'backslashreplace').decode('gbk', 'backslashreplace')
@@ -92,7 +98,7 @@ def savetext(start, end, count):
 
 def txtjoint(dir):
     files = os.listdir(dir)
-    res = ''
+    res = 'control_number,student1,student2,student3,university,prize,'
     for file in files:
         with open(dir + file, "r", encoding='utf-8') as f:
             content = f.read()
