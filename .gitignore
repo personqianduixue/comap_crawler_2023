@@ -1,5 +1,6 @@
 paper/*.pdf
 .ipynb_checkpoints
+__pycache__
 gitpush.bat
 .idea
 tmp*.txt
