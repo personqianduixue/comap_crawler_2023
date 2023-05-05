@@ -1,6 +1,6 @@
-year = 22
+year = 23
 total_num = 30000
-# 30000/进程数
+# step=30000/进程数
 #开60进程
 download_step = 500
 #开60进程
