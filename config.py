@@ -7,6 +7,6 @@ download_step = 500
 
 pdf2text_step = 500
 #你的学校
-your_university= 'Xiamen University'
+your_university= 'BNU-HKBU United International College'
 #TesseractOCR路径
 TesseractOCR_path = 'E:/prog/TesseractOCR/tesseract.exe'
