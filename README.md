@@ -3,7 +3,7 @@
 
 美国大学生数学建模竞赛证书爬取及信息OCR识别分析
 
-1. config.py中设置线程数，你的学校，TesseractOCR路径等
+1. config.py中设置年份、线程数、你的学校、TesseractOCR路径等
 
 2. download.py下载证书，由于有些证书只运行一次部分下载会失败，需要运行多次，确保全部下载
 
