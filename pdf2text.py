@@ -56,11 +56,11 @@ def pdf2text(pdfPath, control_number, zoom_x=6, zoom_y=6, rotation_angle=0):
         with open('exception.txt', 'w+') as exception_file:
             exception_file.write(str(control_number))
 
-    university = university.replace(',', ' ')
+    university = university.replace(',', ' ').replace('1', 'i')
     prize = prize.replace(',', ' ')
     stus = []
     for student in students:
-        student = student.replace(',', ' ')
+        student = student.replace(',', ' ').replace('1', 'i')
         stus.append(student)
     return stus, university, prize
 
