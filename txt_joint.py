@@ -1,5 +1,6 @@
 import os
 import re
+from config import year
 
 def txtjoint(dir):
     files = os.listdir(dir)
@@ -11,7 +12,7 @@ def txtjoint(dir):
                 content = f.read()
             res += content
 
-    with open(dir + "all.txt", "w", encoding='utf-8') as outFile:
+    with open(dir + "all_20"+str(year)+".txt", "w", encoding='utf-8') as outFile:
         outFile.write(res)
         print('txtjoint sucessfully')
 

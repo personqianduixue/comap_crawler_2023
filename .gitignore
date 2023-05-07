@@ -4,4 +4,5 @@ __pycache__
 gitpush.bat
 .idea
 tmp*.txt
-your_university
+all/tmp*.txt
+your_university/tmp*.txt
