@@ -1,8 +1,11 @@
 paper/*.pdf
+paper_2022/*.pdf
+paper_2023/*.pdf
 .ipynb_checkpoints
 __pycache__
 gitpush.bat
 .idea
 tmp*.txt
 all/tmp*.txt
-your_university/tmp*.txt
+/all/tmp*.txt
+your_university/*.txt

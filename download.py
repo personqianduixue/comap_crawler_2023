@@ -25,7 +25,7 @@ class CMcmCertificateCrawler():
     def FSavePDF(self, control_number):
         # 下载证书PDF
         try:
-            path = "./paper/" + str(control_number) + ".pdf"
+            path = './paper_20' + str(year) + '/' + str(control_number) + '.pdf'
             response = self.FGetResponse()
             # print(response.status_code)
             if response.status_code != 404:
@@ -59,7 +59,7 @@ if __name__ == '__main__':
         control_number = year * 100000 + int(control_number)
         all_control_list.append(control_number)
 
-    dir = './paper/'
+    dir = './paper_20' + str(year) + '/'
     if not os.path.exists(dir):
         os.mkdir(dir)
     download_filelist = os.listdir(dir)
