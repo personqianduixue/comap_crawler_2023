@@ -9,3 +9,5 @@ tmp*.txt
 all/tmp*.txt
 /all/tmp*.txt
 your_university/*.txt
+/your_university/*.txt
+your_university
