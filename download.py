@@ -5,6 +5,7 @@
 import os
 import requests
 from multiprocessing import Process
+from random import shuffle
 from config import *
 
 
@@ -71,6 +72,7 @@ if __name__ == '__main__':
             all_control_list.remove(filenum)
 
     step = download_step
+    shuffle(all_control_list)
     for i in range(0, len(all_control_list), step):
         start = i
         end = i + step - 1
