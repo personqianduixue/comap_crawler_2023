@@ -1,6 +1,8 @@
 # comap_crawler
 2023美赛爬虫
 
+update:新增advisor列
+
 美国大学生数学建模竞赛证书爬取及信息OCR识别分析
 
 1. config.py中设置年份、线程数、你的学校、TesseractOCR路径等

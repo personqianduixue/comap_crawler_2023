@@ -1,4 +1,4 @@
-year = 23
+year = 22
 total_num = 30000
 # 进程数根据CPU和内存能力设置
 # step=30000/进程数

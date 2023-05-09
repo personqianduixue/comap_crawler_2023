@@ -17,6 +17,7 @@ def pdf2text(pdfPath, control_number, zoom_x=6, zoom_y=6, rotation_angle=0):
     students = ['']
     university = ''
     prize = ''
+    advisor = ''
     try:
         # 打开PDF文件
         pdf = fitz.open(pdfPath)
@@ -31,22 +32,33 @@ def pdf2text(pdfPath, control_number, zoom_x=6, zoom_y=6, rotation_angle=0):
             img = PIL.Image.frombytes("RGB", [pix.width, pix.height], pix.samples)
             # pix.save("test.png")
             text = pytesseract.image_to_string(img)
-            # print(text)
             text = text.split('\n')
             text = [s for s in text if s]
+            # print(text)
             try:
-                advisor_index = text.index('With Student Advisor')
+                students_index = text.index('With Student Advisor')
+                advisor_index = text.index('With Student Advisor') + 1
             except:
                 try:
-                    advisor_index = text.index('With Faculty Advisor')
+                    students_index = text.index('With Faculty Advisor')
+                    advisor_index = text.index('With Faculty Advisor') + 1
                 except:
-                    advisor_index = text.index('Was Designated As') - 3
+                    try:
+                        students_index = text.index('Of') - 1
+                        advisor_index = text.index('Of') - 1
+                    except:
+                        students_index = text.index('Was Designated As') - 3
+                        advisor_index = text.index('Was Designated As') - 2
+            # print(students_index)
+            # print(advisor_index)
             try:
                 univ_index = text.index('Was Designated As') - 1
-                students = text[0:advisor_index]
+                students = text[0:students_index]
+                advisor = text[advisor_index]
                 university = text[univ_index]
             except:
                 students = text[0:3]
+                advisor = text[4]
                 university = text[5]
             prize = text[-1]
 
@@ -58,11 +70,12 @@ def pdf2text(pdfPath, control_number, zoom_x=6, zoom_y=6, rotation_angle=0):
 
     university = university.replace(',', ' ').replace('1', 'i')
     prize = prize.replace(',', ' ')
+    advisor = advisor.replace(',', ' ').replace('1', 'i')
     stus = []
     for student in students:
         student = student.replace(',', ' ').replace('1', 'i')
         stus.append(student)
-    return stus, university, prize
+    return stus, advisor, university, prize
 
 
 def savetext(start, end, count):
@@ -75,7 +88,7 @@ def savetext(start, end, count):
         path = "./paper_20" + str(year) + "/" + str(control_number) + ".pdf"
         # print(path)
         if os.path.exists(path) and os.path.getsize(path) > 0:
-            students, university, prize = pdf2text(path, control_number)
+            students, advisor, university, prize = pdf2text(path, control_number)
             if prize:
                 if len(students) == 0:
                     students = ', , '
@@ -89,7 +102,7 @@ def savetext(start, end, count):
                     students = students[0:3]
                     students = ','.join(students)
 
-                row = '%s,%s,%s,%s,\n' % (control_number, students, university, prize)
+                row = '%s,%s,%s,%s,%s,\n' % (control_number, students, advisor, university, prize)
                 row = row.encode('gbk', 'backslashreplace').decode('gbk', 'backslashreplace')
                 try:
                     print(row)
@@ -124,4 +137,4 @@ if __name__ == '__main__':
         p.start()
         count += 1
 
-    # students, university, prize = pdf2text('./paper/2227551.pdf', 2227551)
+    # students, advisor, university, prize = pdf2text('./paper_2023/2300009.pdf', 2300009)
