@@ -72,7 +72,8 @@ def savetext(start, end, count):
     for control_number in range(start, end):
         control_number = '%05d' % control_number
         control_number = year * 100000 + int(control_number)
-        path = "./paper20_" + str(year) + "/" + str(control_number) + ".pdf"
+        path = "./paper_20" + str(year) + "/" + str(control_number) + ".pdf"
+        print(path)
         if os.path.exists(path) and os.path.getsize(path) > 0:
             students, university, prize = pdf2text(path, control_number)
             if prize:
