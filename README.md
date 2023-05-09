@@ -3,15 +3,31 @@
 
 update:新增advisor列
 
+
 美国大学生数学建模竞赛证书爬取及信息OCR识别分析
 
-1. config.py中设置年份、线程数、你的学校、TesseractOCR路径等
 
-2. download.py下载证书，由于有些证书只运行一次部分下载会失败，需要运行多次，确保全部下载
+1. 安装tesseractOCR，参考版本：v5.0.1.20220118，其他版本不保证可用，
 
-3. pdf2text.py识别学校、姓名、获奖等级、队伍ID等
-4. txt_joint.py合并OCR识别的txt结果
-5. analysis.ipynb分析数据
+   v5.0.1.20220118下载地址
+
+   https://digi.bib.uni-mannheim.de/tesseract/tesseract-ocr-w64-setup-v5.0.1.20220118.exe
+
+   其他版本下载：https://digi.bib.uni-mannheim.de/tesseract/
+
+2. `pip install -r requirements.txt`
+
+3. config.py中设置年份、进程数、你的学校、TesseractOCR安装路径等，进程数根据CPU和内存情况设置
+
+4. download.py下载证书，由于有些证书只运行一次部分下载会失败，需要运行多次，确保全部下载
+
+5. pdf2text.py识别学校、姓名、获奖等级、队伍ID等
+
+6. txt_joint.py合并OCR识别的txt结果
+
+7. analysis.ipynb分析数据
+
+#### 识别结果：
 
 2023美赛结果，证书数量20858张，最终识别20818条信息
 

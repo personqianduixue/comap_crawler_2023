@@ -1,4 +1,4 @@
-requests
-pytesseract
-fitz
-PyMuPDF
+requests==2.22.0
+pytesseract==0.3.9
+fitz==0.0.1.dev2
+PyMuPDF==1.19.6
