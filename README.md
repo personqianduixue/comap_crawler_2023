@@ -11,18 +11,18 @@
 4. txt_joint.py合并OCR识别的txt结果
 5. analysis.ipynb分析数据
 
-以下是2022美赛爬取，2023美赛出成绩后会第一时间爬取
+2023美赛结果，证书数量20858张，最终识别20818条信息
 
-https://github.com/personqianduixue/comap_crawler
+https://raw.githubusercontent.com/personqianduixue/comap_crawler_2023/master/all/all_2023.txt
 
-download.py：多线程下载证书，大概用时1小时
+![统计结果](https://cdn.jsdelivr.net/gh/personqianduixue/picbed/img202305091055579.png)
 
-pdf2text.py:  多线程pdf OCR信息提取，大概用时1.5小时
+![image-20230509105732629](https://cdn.jsdelivr.net/gh/personqianduixue/picbed/img202305091057649.png)
 
-证书数量：27205
+2022美赛结果，证书数量27205张，最终识别27161条信息
 
-最终识别得到的信息条数：27161
+https://raw.githubusercontent.com/personqianduixue/comap_crawler_2023/master/all/all_2022.txt
 
-https://raw.githubusercontent.com/personqianduixue/comap_crawler/master/all/all.txt
+![统计结果](https://cdn.jsdelivr.net/gh/personqianduixue/picbed/img202305091056671.png)
 
-部分信息会识别错误，例如 i 识别成了 1 
+![image-20230509105700188](https://cdn.jsdelivr.net/gh/personqianduixue/picbed/img202305091057210.png)
