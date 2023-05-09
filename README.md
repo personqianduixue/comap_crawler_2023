@@ -15,6 +15,8 @@
 
 https://raw.githubusercontent.com/personqianduixue/comap_crawler_2023/master/all/all_2023.txt
 
+cdn加速镜像：https://ghproxy.net/https://raw.githubusercontent.com/personqianduixue/comap_crawler_2023/master/all/all_2023.txt
+
 ![统计结果](https://cdn.jsdelivr.net/gh/personqianduixue/picbed/img202305091055579.png)
 
 ![image-20230509105732629](https://cdn.jsdelivr.net/gh/personqianduixue/picbed/img202305091057649.png)
@@ -22,6 +24,8 @@ https://raw.githubusercontent.com/personqianduixue/comap_crawler_2023/master/all
 2022美赛结果，证书数量27205张，最终识别27161条信息
 
 https://raw.githubusercontent.com/personqianduixue/comap_crawler_2023/master/all/all_2022.txt
+
+cdn加速镜像：https://ghproxy.net/https://raw.githubusercontent.com/personqianduixue/comap_crawler_2023/master/all/all_2022.txt
 
 ![统计结果](https://cdn.jsdelivr.net/gh/personqianduixue/picbed/img202305091056671.png)
 
