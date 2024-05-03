@@ -4,11 +4,9 @@
 
 2023美赛爬虫，2024美赛获奖证书爬虫
 
-update:新增advisor列
-
-
 美国大学生数学建模竞赛证书爬取及信息OCR识别分析
 
+## 运行步骤
 
 1. 安装tesseractOCR，参考版本：v5.0.1.20220118，其他版本不保证可用，
 
@@ -30,7 +28,21 @@ update:新增advisor列
 
 7. analysis.ipynb分析数据
 
-#### 识别结果：
+## 识别结果：
+
+### 2024美赛
+
+2024美赛结果，证书数量28905张，最终识别28796条信息
+https://raw.githubusercontent.com/personqianduixue/comap_crawler_2023/master/all/all_2022.txt
+
+cdn加速镜像：https://fastly.jsdelivr.net/gh/personqianduixue/comap_crawler_2023@master/all/all_2022.txt
+
+![统计结果](https://raw.githubusercontent.com/personqianduixue/picbed/main/img/%E7%BB%9F%E8%AE%A1%E7%BB%93%E6%9E%9C.png)
+
+![image-20230509105732629](https://github.com/personqianduixue/picbed/blob/main/img/Snipaste_2024-05-03_18-11-15.png)
+
+
+### 2023美赛
 
 2023美赛结果，证书数量20858张，最终识别20818条信息
 
@@ -41,6 +53,8 @@ cdn加速镜像：https://ghproxy.net/https://raw.githubusercontent.com/personqi
 ![统计结果](https://cdn.jsdelivr.net/gh/personqianduixue/picbed/img202305091055579.png)
 
 ![image-20230509105732629](https://cdn.jsdelivr.net/gh/personqianduixue/picbed/img202305091057649.png)
+
+### 2022美赛
 
 2022美赛结果，证书数量27205张，最终识别27161条信息
 
