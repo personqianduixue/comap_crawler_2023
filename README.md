@@ -33,9 +33,9 @@
 ### 2024美赛
 
 2024美赛结果，证书数量28905张，最终识别28796条信息
-https://raw.githubusercontent.com/personqianduixue/comap_crawler_2023/master/all/all_2022.txt
+https://raw.githubusercontent.com/personqianduixue/comap_crawler_2023/master/all/all_2024.txt
 
-cdn加速镜像：https://fastly.jsdelivr.net/gh/personqianduixue/comap_crawler_2023@master/all/all_2022.txt
+cdn加速镜像：https://fastly.jsdelivr.net/gh/personqianduixue/comap_crawler_2023@master/all/all_2024.txt
 
 ![统计结果](https://raw.githubusercontent.com/personqianduixue/picbed/main/img/%E7%BB%9F%E8%AE%A1%E7%BB%93%E6%9E%9C.png)
 
